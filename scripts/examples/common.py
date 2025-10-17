@@ -17,12 +17,12 @@ from silk.backbones.superpoint.vgg import ParametricVGG
 
 from silk.config.model import load_model_from_checkpoint
 from silk.models.silk import matcher
+from importlib import resources
 
-# CHECKPOINT_PATH = os.path.join(os.path.dirname(__file__), "../../assets/models/silk/analysis/alpha/pvgg-4.ckpt")
 CHECKPOINT_PATH = os.path.join(
-    os.path.dirname(__file__), "../../assets/models/silk/coco-rgb-aug.ckpt"
+    resources.files('silk'), 'coco-rgb-aug.ckpt'
 )
-DEVICE = "cuda:0"
+DEVICE = "cpu"
 
 SILK_NMS = 0  # NMS radius, 0 = disabled
 SILK_BORDER = 0  # remove detection on border, 0 = disabled

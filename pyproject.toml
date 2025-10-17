@@ -44,3 +44,4 @@ Homepage = "https://github.com/facebookresearch/silk"
 
 [tool.hatch.build.targets.wheel]
 packages = ["silk"]
+include = ["silk/coco-rgb-aug.ckpt"]
