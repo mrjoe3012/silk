@@ -1,3 +1,9 @@
+# Notice
+
+This is forked from https://github.com/facebookresearch/silk/tree/main
+
+Copyright belogns to the original authors.
+
 # SiLK - Simple Learned Keypoints
 
 > [[Arxiv Paper](https://arxiv.org/abs/2304.06194)] <br/>
