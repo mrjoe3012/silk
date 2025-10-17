@@ -12,7 +12,7 @@ from silk.utils import CHECKPOINT_PATH
 
 __all__ = ['load_model']
 
-def load_model():
+def load_model(nms: float = 0):
     backbone = ParametricVGG(
         use_max_pooling=False,
         padding=0,
@@ -25,7 +25,7 @@ def load_model():
         backbone=backbone,
         detection_threshold=1.0,
         detection_top_k=10000,
-        nms_dist=0,
+        nms_dist=nms,
         border_dist=0,
         default_outputs=("sparse_positions", "sparse_descriptors"),
         descriptor_scale_factor=1.41,
