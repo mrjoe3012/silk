@@ -7,7 +7,6 @@
 import torch
 from silk.backbones.silk.silk import SiLKVGG
 from silk.backbones.superpoint.vgg import ParametricVGG
-from pytorch_lightning.utilities.cloud_io import load
 from silk.utils import CHECKPOINT_PATH
 
 __all__ = ['load_model']
@@ -31,7 +30,9 @@ def load_model(nms: float = 0):
         descriptor_scale_factor=1.41,
         padding=0
     )
-    state_dict = load(CHECKPOINT_PATH, 'cpu')['state_dict']
+    # state_dict = load(CHECKPOINT_PATH, 'cpu')['state_dict']
+    with open(CHECKPOINT_PATH, 'rb') as f:
+        state_dict = torch.load(f, map_location='cpu', weights_only=False)['state_dict']
     state_dict = {
         k[len('_mods.model.'):] : v
             for k, v in state_dict.items()
