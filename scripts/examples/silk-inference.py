@@ -11,8 +11,8 @@ from common import get_model, load_images, SILK_MATCHER
 from silk.backbones.silk.silk import from_feature_coords_to_image_coords
 from silk.cli.image_pair_visualization import create_img_pair_visual, save_image
 
-IMAGE_0_PATH = "/datasets01/hpatches/01042022/v_adam/1.ppm"
-IMAGE_1_PATH = "/datasets01/hpatches/01042022/v_adam/2.ppm"
+IMAGE_0_PATH = "/home/joe/Downloads/hpatches-sequences-release/v_adam/1.ppm"
+IMAGE_1_PATH = "/home/joe/Downloads/hpatches-sequences-release/v_adam/2.ppm"
 OUTPUT_IMAGE_PATH = "./img.png"
 
 
