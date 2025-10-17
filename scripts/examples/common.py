@@ -19,9 +19,7 @@ from silk.config.model import load_model_from_checkpoint
 from silk.models.silk import matcher
 from importlib import resources
 
-CHECKPOINT_PATH = os.path.join(
-    resources.files('silk'), 'coco-rgb-aug.ckpt'
-)
+from silk.utils import CHECKPOINT_PATH
 DEVICE = "cpu"
 
 SILK_NMS = 0  # NMS radius, 0 = disabled
