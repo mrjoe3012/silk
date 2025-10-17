@@ -14,8 +14,8 @@ from inspect import signature
 import jax
 import jax.numpy as jnp
 import torch
-from jax import dlpack as jax_dlpack, tree_flatten, tree_unflatten
-from jax.tree_util import tree_map
+from jax import dlpack as jax_dlpack
+from jax.tree_util import tree_map, tree_flatten, tree_unflatten
 from torch.utils import dlpack as torch_dlpack
 
 # To avoid having jax taking all the VRAM
@@ -61,6 +61,7 @@ def tree_get_devices(x_torch):
 def find_unique_device(devices):
     device = None
     flat_d, _ = tree_flatten(devices)
+
     for d in flat_d:
         if d:
             if device is None:
