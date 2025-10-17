@@ -5,8 +5,8 @@
 # LICENSE file in the root directory of this source tree.
 
 import torch
-from lib.backbones.silk.silk import SiLKVGG
-from lib.backbones.superpoint.vgg import ParametricVGG
+from silk.backbones.silk.silk import SiLKVGG
+from silk.backbones.superpoint.vgg import ParametricVGG
 from pytorch_lightning.utilities.cloud_io import load
 from silk.utils import CHECKPOINT_PATH
 
