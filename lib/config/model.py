@@ -8,8 +8,6 @@ from typing import Any, Callable, Dict, List, Optional, Union
 
 import pytorch_lightning as pl
 import torch
-from pytorch_lightning.utilities.cloud_io import load as pl_load
-
 
 def load_model_from_checkpoint(  # noqa: C901
     model: Union[pl.LightningModule, torch.nn.Module],
@@ -23,7 +21,7 @@ def load_model_from_checkpoint(  # noqa: C901
     state_dict_key: Union[None, str] = "state_dict",
     state_dict_fn: Optional[Callable[[Any], Any]] = None,
 ):
-    checkpoint = pl_load(checkpoint_path, device)
+    checkpoint = torch.load(checkpoint_path, map_location='cpu', weights_only=False)
 
     if isinstance(model, pl.LightningModule):
         model.on_load_checkpoint(checkpoint)
