@@ -89,7 +89,7 @@ HANDLER_OPTIONS = {
     },
 }
 HANDLER_IDS = {}
-DEFAULT_HANDLERS = ["stderr.dev"]
+DEFAULT_HANDLERS = ["stderr.prod"]
 
 
 @dataclass
